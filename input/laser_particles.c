@@ -12,24 +12,24 @@
 void sim_init( t_simulation* sim ){
 
 	// Time step
-	float dt = 0.0019;
-	float tmax = 42.8;
+	float dt = 0.00095;
+	float tmax = 40;
 
 	// Simulation box
-	int   nx  = 10000;
+	int   nx  = 20000;
 	float box = 20.0;
 
 	// Diagnostic frequency
-	int ndump = 0;
+	int ndump = 1;
 
     // Initialize particles
 	const int n_species = 1;
 
 	// Use 1 particles per cell
-	int ppc = 1;
+	int ppc = 10;
 
 	// Density profile
-	t_density density = { .type = STEP, .start = 20.0 };
+	t_density density = { .type = STEP, .start = 54.0 };//55
 
 	t_species* species = (t_species *) malloc( n_species * sizeof( t_species ));
 	spec_new( &species[0], "electrons", -1.0, ppc, NULL, NULL, nx, box, dt, &density );
