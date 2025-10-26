@@ -54,9 +54,10 @@ int main (int argc, const char * argv[]) {
 
 	uint64_t t0,t1;
 	t0 = timer_ticks();
+    printf("n = 0, t = 0.0\n");
 
 	for (n=0,t=0.0; t<=sim.tmax; n++, t=n*sim.dt) {
-		printf("n = %i, t = %f\n",n,t);
+        //printf("n = %i, t = %f\n",n,t);
 
 		if ( report ( n , sim.ndump ) )	sim_report( &sim );
 
@@ -67,6 +68,7 @@ int main (int argc, const char * argv[]) {
             sim_report_energy (&sim);
         }
 	}
+    printf("n = %i, t = %f\n",n,t);
 
 	t1 = timer_ticks();
 	fprintf(stderr, "\nSimulation ended.\n\n");
