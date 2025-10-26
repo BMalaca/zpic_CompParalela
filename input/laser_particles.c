@@ -13,7 +13,7 @@ void sim_init( t_simulation* sim ){
 
 	// Time step
 	float dt = 0.00095;
-	float tmax = 4;
+	float tmax = 40;
 
 	// Simulation box
 	int   nx  = 20000;
